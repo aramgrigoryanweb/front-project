@@ -1,34 +1,54 @@
+<<!DOCTYPE html>>
 <html>
 	<head >
+		<meta charset="UTF-8">
+		<title>تماس</title>
 		<style>
+			body{
+				direction:rtl;
+				background-color:lightblue;
+			}
+			.message_form{
+				margin:1%;
+				font-family:tahoma;
+			}
+			.form_input,label	{
+				font-size:160%;
+				width:7em;
+				height:1.4em;
+				border-radius: 3.5px;
+			}
+			
+			
+		
 		</style>
 	<head>
-	<body charset="UTF-8">
+	<body >
 		<h1>تماس با ما</h1>
-		<form action="contact-db.php" method="url">
+		<form action="send_message.php" method="post">
 			<div class="message_form">
-				<label for = "message_textarea" class = "form_label">نام و نام خانوادگی:</label>
-				<input type="text"  id="message_textarea" name="name_and_family" class="form_input">
+				<label for = "name_lastname" class = "form_label">نام و نام خانوادگی:</label>
+				<input type="text"  id="name_lastname" name="name_lastname" class="form_input" required>
 			</div>
 			<div class="message_form">
-				<label for = "message_text" class = "form_label">شماره موبایل:</label>
-				<input type="tell" id="message_text" name="messgae_text" class="form_input">
+				<label for = "message_text" class = "form_label">شماره تلفن:</label required>
+				<!--محدودیت تعداد ارقام با توجه عداد ارقام شماره تلفن های ایران در نظر گرفته شده -->
+				<input type="tel" id="message_text" name="phone_number" class="form_input"  pattern="[0-9]{11}" >
 			</div>
 			<div class="message_form">
 				<label for = "email_address" class = "form_label">ایمیل:</label>
 				<input type="email"  id="email_address" name="email_address" class="form_input">
 			</div>
 			<div class="message_form">
-				<label for = "message_title" class = "form-label">عنوان پیام:</label>
+				<label for = "message_title" class = "form-label">عنوان پیام:</label required>
 				<input type="text" id="message_title" class="form_input" name="messgae_title">
 			</div>
 			<div class="message_form">
-				<label for = "message_textarea" class = "form_label">متن پیام:</label>
-				<textarea  id="message_textarea" name="messgae_text" class="form_input"></textarea>
+				<label for = "message_textarea" class = "form_label" >متن پیام:</label>
+				<textarea  id="message_textarea" name="messgae_text" class="form_input" required></textarea>
 			</div>
+			<input type="submit" value="ارسال" class="form_input">
 			
-			
-			<input type="submit" value="ارسال" class="submit_btn">
 		</form>
 	<body> 
 <html/>
